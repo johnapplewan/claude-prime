@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>claude-prime</title>
+  <meta name="description" content="Page d'accueil du projet claude-prime, publiée avec GitHub Pages.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #1f1e1c;
+      --muted: #6b6862;
+      --accent: #c96442;
+      --border: #e6e2da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #191817;
+        --surface: #23211f;
+        --text: #f0eee9;
+        --muted: #a39f97;
+        --accent: #e0805e;
+        --border: #34312d;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 16px;
+    }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 8px; letter-spacing: -0.02em; }
+    h1 span { color: var(--accent); }
+    .lead { color: var(--muted); font-size: 1.15rem; margin: 0 0 40px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .card h2 { font-size: 1rem; margin: 0 0 6px; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    a { color: var(--accent); }
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>claude<span>-prime</span></h1>
+    <p class="lead">Bienvenue ! Ce site est publié automatiquement avec GitHub Pages.</p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Simple</h2>
+        <p>Une seule page HTML, sans dépendance ni étape de build.</p>
+      </section>
+      <section class="card">
+        <h2>Responsive</h2>
+        <p>S'adapte aux écrans mobiles comme aux grands écrans.</p>
+      </section>
+      <section class="card">
+        <h2>Thème sombre</h2>
+        <p>Suit automatiquement les préférences du système.</p>
+      </section>
+    </div>
+
+    <a class="btn" href="https://github.com/johnapplewan/claude-prime">Voir le dépôt sur GitHub</a>
+  </main>
+
+  <footer>
+    © <span id="year"></span> claude-prime
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
