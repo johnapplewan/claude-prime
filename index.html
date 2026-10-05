@@ -234,6 +234,75 @@
     .card h3 { font-size: 1.12rem; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
     .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
 
+    /* ---------- Projets (aperçus de liens) ---------- */
+    .projects { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .project {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform .35s, border-color .35s, box-shadow .35s;
+    }
+    .project:hover, .project:focus-visible {
+      transform: translateY(-5px);
+      border-color: rgba(244,163,124,0.45);
+      box-shadow: 0 24px 60px -24px rgba(230,111,143,0.45);
+    }
+    .browser { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: rgba(255,255,255,0.04); border-bottom: 1px solid var(--line); }
+    .browser i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.18); }
+    .browser span {
+      flex: 1;
+      margin-left: 8px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.25);
+      color: var(--faint);
+      font-size: 0.76rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .shot {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background:
+        radial-gradient(120% 90% at 0% 0%, rgba(244,163,124,0.35), transparent 60%),
+        radial-gradient(120% 90% at 100% 100%, rgba(167,139,250,0.4), transparent 60%),
+        var(--bg-2);
+    }
+    .shot .fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: rgba(255,255,255,0.85);
+    }
+    .shot img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      opacity: 0;
+      transition: opacity .6s, transform .8s;
+    }
+    .shot img.ok { opacity: 1; }
+    .project:hover .shot img { transform: scale(1.04); }
+    .project-body { padding: 22px 24px 26px; }
+    .project-body h3 { margin: 0 0 6px; font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+    .project-body p { margin: 0 0 16px; color: var(--muted); font-size: 0.95rem; }
+    .visit { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 500; color: var(--peach); }
+    .visit svg { transition: transform .25s; }
+    .project:hover .visit svg { transform: translate(3px, -3px); }
+
     /* ---------- Citation ---------- */
     .quote { text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     blockquote {
@@ -301,6 +370,7 @@
         claude-prime
       </a>
       <ul>
+        <li><a href="#projets">Projets</a></li>
         <li><a href="#vision">Vision</a></li>
         <li><a href="#principes">Principes</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -311,10 +381,10 @@
   <header class="hero">
     <div class="wrap">
       <div class="badge reveal"><i></i> En ligne sur GitHub Pages</div>
-      <h1 class="reveal d1">Créer avec <em>clarté</em>, partager avec <em>élégance</em>.</h1>
-      <p class="lead reveal d2">claude-prime est un espace pour imaginer, construire et montrer des idées — simplement, sans bruit, avec le soin du détail.</p>
+      <h1 class="reveal d1">Bonjour les <em>Scapien.ne.s</em></h1>
+      <p class="lead reveal d2">Voici ma page GitHub pour partager mes projets.</p>
       <div class="actions reveal d3">
-        <a class="btn btn-primary" href="#vision">Découvrir
+        <a class="btn btn-primary" href="#projets">Voir mes projets
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </a>
         <a class="btn btn-ghost" href="https://github.com/johnapplewan/claude-prime">Voir sur GitHub</a>
@@ -325,6 +395,44 @@
       </div>
     </div>
   </header>
+
+  <section id="projets">
+    <div class="wrap">
+      <p class="eyebrow reveal">Projets</p>
+      <h2 class="reveal d1">Mes <em>créations</em> en ligne.</h2>
+      <p class="section-lead reveal d2">Un aperçu de ce que je construis. Cliquez sur une carte pour ouvrir le site dans un nouvel onglet.</p>
+      <div class="projects">
+        <a class="project reveal" href="https://boisterous-meerkat-e9b82e.netlify.app/" target="_blank" rel="noopener">
+          <div class="browser" aria-hidden="true"><i></i><i></i><i></i><span>boisterous-meerkat-e9b82e.netlify.app</span></div>
+          <div class="shot">
+            <div class="fallback" aria-hidden="true">Netlify</div>
+            <img data-preview="https://boisterous-meerkat-e9b82e.netlify.app/" alt="Aperçu du site boisterous-meerkat-e9b82e.netlify.app" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Mon projet Netlify</h3>
+            <p>Un site publié sur Netlify.</p>
+            <span class="visit">Visiter le site
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="project reveal d1" href="https://www.johnapple.fr/starseeds" target="_blank" rel="noopener">
+          <div class="browser" aria-hidden="true"><i></i><i></i><i></i><span>johnapple.fr/starseeds</span></div>
+          <div class="shot">
+            <div class="fallback" aria-hidden="true">Starseeds</div>
+            <img data-preview="https://www.johnapple.fr/starseeds" alt="Aperçu de la page Starseeds sur johnapple.fr" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Starseeds</h3>
+            <p>Le projet Starseeds, sur johnapple.fr.</p>
+            <span class="visit">Visiter le site
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <section id="vision">
     <div class="wrap">
@@ -403,6 +511,31 @@
       });
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // Aperçus des projets : capture d'écran générée à la volée,
+    // avec un second service en secours puis la carte dégradée si tout échoue.
+    document.querySelectorAll("img[data-preview]").forEach((img) => {
+      const url = img.dataset.preview;
+      const sources = [
+        `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=1200&h=750`,
+        `https://image.thum.io/get/width/1200/crop/750/noanimate/${url}`,
+      ];
+      let i = 0, retries = 0;
+      img.addEventListener("load", () => {
+        // mshots renvoie d'abord une petite image d'attente : on réessaie plus tard
+        if (i === 0 && img.naturalWidth < 400) {
+          if (++retries <= 5) {
+            setTimeout(() => { img.src = sources[0] + "&r=" + Date.now(); }, 4000);
+          } else {
+            img.src = sources[++i];
+          }
+          return;
+        }
+        img.classList.add("ok");
+      });
+      img.addEventListener("error", () => { if (++i < sources.length) img.src = sources[i]; });
+      img.src = sources[0];
+    });
 
     // Halo lumineux qui suit la souris sur les cartes
     document.querySelectorAll(".card").forEach((card) => {
