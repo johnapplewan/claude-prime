@@ -1,6 +1,6 @@
 # claude-prime
 
-Site statique prêt à être publié avec **GitHub Pages**.
+Portfolio de John Apple — site statique publié avec **GitHub Pages**.
 
 🌐 Une fois activé, le site sera disponible à l'adresse :
 <https://johnapplewan.github.io/claude-prime/>
