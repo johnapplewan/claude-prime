@@ -12,13 +12,17 @@ Portfolio de John Apple — site statique publié avec **GitHub Pages**.
 | `index.html` | Page d'accueil du site (HTML + CSS intégrés, aucune dépendance).  |
 | `.nojekyll`  | Désactive le traitement Jekyll : les fichiers sont servis tels quels. |
 | `README.md`  | Ce fichier.                                                       |
+| `.github/workflows/pages.yml` | Déploiement automatique sur GitHub Pages via GitHub Actions. |
 
 ## Activer GitHub Pages
 
 1. Ouvrir le dépôt sur GitHub, puis **Settings → Pages**.
-2. Dans **Build and deployment**, choisir **Source : Deploy from a branch**.
-3. Sélectionner la branche `main` et le dossier `/ (root)`, puis **Save**.
-4. Après une ou deux minutes, le site est en ligne à l'adresse indiquée ci-dessus.
+2. Dans **Build and deployment**, choisir **Source : GitHub Actions**.
+3. C'est tout : à chaque mise à jour de `main`, le workflow **Déployer sur GitHub Pages** publie le site.
+   Pour le lancer à la main : onglet **Actions → Déployer sur GitHub Pages → Run workflow**.
+
+Le site est aussi compatible avec **Deploy from a branch** (`main`, `/ (root)`), mais il faut
+choisir l'une **ou** l'autre source : avec « Deploy from a branch », le workflow échouerait.
 
 ## Tester en local
 
