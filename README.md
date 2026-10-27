@@ -2,16 +2,18 @@
 
 Portfolio de John Apple — site statique publié avec **GitHub Pages**.
 
-🌐 Une fois activé, le site sera disponible à l'adresse :
-<https://johnapplewan.github.io/claude-prime/>
+🌐 <https://johnapplewan.github.io/claude-prime/>
 
 ## Contenu du dépôt
 
-| Fichier      | Rôle                                                              |
-| ------------ | ----------------------------------------------------------------- |
-| `index.html` | Page d'accueil du site (HTML + CSS intégrés, aucune dépendance).  |
-| `.nojekyll`  | Désactive le traitement Jekyll : les fichiers sont servis tels quels. |
-| `README.md`  | Ce fichier.                                                       |
+| Fichier | Rôle |
+| --- | --- |
+| `index.html` | Le site : une seule page, HTML + CSS + un peu de JavaScript intégrés. |
+| `assets/logo-noir.webp`, `logo-marine.webp`, `logo-or.webp` | Le monogramme JA en trois versions, recadré. Chaque fond est identique, au pixel près, à la couleur de la page : noir `#000000`, marine `#002454`, or `#a67e42`. |
+| `assets/icon-512.png`, `apple-touch-icon.png`, `favicon-48.png` | Icônes du site (monogramme or). |
+| `assets/og.png` | Image affichée quand le lien est partagé (1200 × 630). |
+| `assets/fonts/` | Bodoni Moda et Jost, auto-hébergées (licence SIL OFL 1.1, textes joints). |
+| `.nojekyll` | Les fichiers sont servis tels quels, sans traitement Jekyll. |
 | `.github/workflows/pages.yml` | Déploiement automatique sur GitHub Pages via GitHub Actions. |
 
 ## Activer GitHub Pages
